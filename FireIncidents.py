@@ -1,25 +1,37 @@
-# import csv module
 import csv
+import datetime
+from time import strftime
+
+# imports CSV and datetime modules
+
+def concatenator(date):
+    return (str(date) + " fire Louisville Kentucky")
 
 # Google Search concatenator that creates efficient Google search to learn more about a specific incident through local media
 
-def concatenator(d):
-    return (str(d) + "fire in Louisville")
-
-# the main function which opens the CSV file, unpacks each line into a variable
-
 def main():
     f = open("Louisville_Metro_KY_-_Civilian_Fire_Injuries.csv", "r")
+    count = 0
 
+    # main function begins by opening CSV file
+
+    next(f)
+
+    # the CSV header information is discarded
+    
     for line in f:
         id, injuryDate, totalInjuries, objectid = line.split(",")
-        
-        search = concatenator(injuryDate)
-        
-# if condition goes here
+        totalInjuries = int(totalInjuries)
 
-        print(id, injuryDate, totalInjuries)
-        print(search)
+        # if condition goes here
+
+        if totalInjuries > 1:
+            search = concatenator(injuryDate)
+            print(id, injuryDate, totalInjuries, objectid)
+            print(search)
+            count += 1
+
+    print(count)
     
     f.close()
 
