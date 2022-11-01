@@ -7,7 +7,10 @@ def Googler(date):
     return (str(date) + " fire Louisville Kentucky\n")
 
 def visualizer(x, y):
-    plt.plot(x, y, marker = "^")
+    plt.plot(x, y, marker = "^", linestyle = "None")
+    plt.xlabel("Date of Incident")
+    plt.ylabel("Fire Injuries per Incident")
+    plt.title("Documented Fire Incidents in Louisville, Kentucky from 2005 to 2016")
     plt.show()
 
 # Google Search concatenator that creates efficient Google search to learn more about a specific incident through local media
