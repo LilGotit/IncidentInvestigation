@@ -1,7 +1,5 @@
 import pandas as pd
-import matplotlib as mpl
 import matplotlib.pyplot as plt
-import datetime as dt
 
 # imports pandas and matplotlib modules
 
