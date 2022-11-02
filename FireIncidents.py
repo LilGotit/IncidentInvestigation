@@ -8,7 +8,8 @@ import matplotlib.pyplot as plt
 def googler(date):
     return (str(date) + " fire Louisville Kentucky")
 
-# Visualizer plotting injury count over injury dates, setting up labels
+# Visualizer plotting injury count over injury dates, setting up labels, creating two
+# visualizations as required (4)
 
 def visualizer(x, y):
     plt.plot(x, y, marker = "^", linestyle = "None")
@@ -18,9 +19,15 @@ def visualizer(x, y):
     plt.grid(True)
     plt.show()
 
-# Reads in CSV, converts injuryDate to datetime, concatenating dates for Google searches
-# into written text file, selecting only incidents involving more than one
-# fire injury, then calls visualization
+    plt.hist(y)
+    plt.xlabel("Amount of Fire Injuries per Incident")
+    plt.ylabel("Number of Incidents")
+    plt.title("Documented Fire Incidents in Louisville, Kentucky from 2005 to 2016")
+    plt.show()
+
+# Reads in CSV (1), converts injuryDate to datetime (2), concatenates dates for Google searches
+# into written text file, only selecting incidents involving more than one fire injury (3), then
+# calls visualizer
 
 def main():
     df = pd.read_csv("assets/fireInjuries.csv")
@@ -41,3 +48,15 @@ def main():
 # Calls the main program into existence
 
 main()
+
+# The visualizations offer a touch of insight into the 300 datapoints at hand. The bulk of the
+# incidents were solo affairs. Fire spreads, but thankfully, the likelihood of fire injury does
+# not. 
+
+# Despite my initial presumptions about high incidents in July - as the first full month of summer,
+# with weeks of fireworks surrounding - the data did not reflect that.
+
+# What was revealed was a sobering reality: a cold, dangerous winter. Another interesting datapoint
+# came from the absence of one: specifically, there was no data point for an incident involving two
+# or more fire injuries in the month of March. This interpretation of results concludes my project
+# (5). Thank you for your time.
