@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 # Using formatted date, concatenates Google search for news article
 
-def Googler(date):
+def googler(date):
     return (str(date) + " fire Louisville Kentucky")
 
 # Visualizer plotting injury count over injury dates, setting up labels
@@ -24,19 +24,19 @@ def visualizer(x, y):
 
 def main():
     df = pd.read_csv("assets/fireInjuries.csv")
-    Injury_Date = pd.to_datetime(df["Injury_Date"], errors = "coerce")
-    Total_Injuries = df["Total_Injuries"]
+    injuryDate = pd.to_datetime(df["Injury_Date"], errors = "coerce")
+    totalInjuries = df["Total_Injuries"]
 
-    w = open("googleSearches.txt", "w")
+    searches = open("googleSearches.txt", "w")
     count = 0
-    for line in Injury_Date:
+    for line in injuryDate:
         if df["Total_Injuries"][count] > 1:
-            print(Googler(line.strftime("%Y-%m-%d")))
-            w.writelines(Googler(line.strftime("%Y-%m-%d")))
+            print(googler(line.strftime("%Y-%m-%d")))
+            searches.writelines(googler(line.strftime("%Y-%m-%d")))
         count += 1
-    w.close()
+    searches.close()
 
-    visualizer(Injury_Date, Total_Injuries)
+    visualizer(injuryDate, totalInjuries)
 
 # Calls the main program into existence
 
