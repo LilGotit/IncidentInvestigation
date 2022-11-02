@@ -1,12 +1,14 @@
+# Begin by importing pandas and matplotlib modules for Dataframe calculations and visualization
+
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# imports pandas and matplotlib modules
+# Using formatted date, concatenates Google search for news article
 
 def Googler(date):
-    return (str(date) + " fire Louisville Kentucky\n")
+    return (str(date) + " fire Louisville Kentucky")
 
-# concatenates Google search for news article, calculated from formatted date
+# Visualizer plotting injury count over injury dates, setting up labels
 
 def visualizer(x, y):
     plt.plot(x, y, marker = "^", linestyle = "None")
@@ -16,16 +18,16 @@ def visualizer(x, y):
     plt.grid(True)
     plt.show()
 
-# visualizer setup; plot and label injury count versus injury dates
+# Reads in CSV, converts injuryDate to datetime, concatenating dates for Google searches
+# into written text file, selecting only incidents involving more than one
+# fire injury, then calls visualization
 
 def main():
     df = pd.read_csv("assets/fireInjuries.csv")
     Injury_Date = pd.to_datetime(df["Injury_Date"], errors = "coerce")
     Total_Injuries = df["Total_Injuries"]
 
-# read in CSV file, convert Injury_Date from object to datetime
-
-    w = open("GoogleSearches.txt", "w")
+    w = open("googleSearches.txt", "w")
     count = 0
     for line in Injury_Date:
         if df["Total_Injuries"][count] > 1:
@@ -34,8 +36,8 @@ def main():
         count += 1
     w.close()
 
-# creates text file with concatenated dates for Google searches, only selects dates involving 2 or more injuries, creates visualization
-
     visualizer(Injury_Date, Total_Injuries)
+
+# Calls the main program into existence
 
 main()
