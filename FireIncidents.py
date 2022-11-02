@@ -38,7 +38,6 @@ def main():
     count = 0
     for line in injuryDate:
         if df["Total_Injuries"][count] > 1:
-            print(googler(line.strftime("%Y-%m-%d")))
             searches.writelines(googler(line.strftime("%Y-%m-%d")))
         count += 1
     searches.close()
