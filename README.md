@@ -1,21 +1,21 @@
-My project began with an ambitious thought: Fire incidents involving more than one person would
-have an exponentially increased likelihood of online documentation. This thesis was tested by
+My project began with an ambitious thought: Fires injuring more than one person would have
+an exponentially increased likelihood of online documentation. This thesis was tested by
 parsing an unaltered government data file involving fire responses from data.louisville.gov, 
 isolating incidents with multiple injuries, and concatenating a Google search to seek an
 accompanying news report.
 
 The resulting program is available either as a Python file or a Jupyter Notebook, both named
-fireIncidents. The assets\fireIncidents.csv is necessary for operation, and the pandas and 
+fireIncidents. The assets/fireIncidents.csv file is necessary for operation, and the pandas and 
 matplotlib modules are required ("pip install pandas" and "pip install matplotlib" commands,
-respectively.)  
+respectively).  
 
-Beginning with an unaltered CSV file downloaded from louisville.gov, the data on fire incidents is
-imported into a Pandas dataframe, and a visualization displays the amount of fire injuries per
-incident over a dozen year period.
+Beginning with an unaltered CSV file downloaded from louisville.gov (assets/fireIncidents.csv),
+the data on fire incidents is imported into a Pandas dataframe, and a visualization displays the
+amount of fire injuries per incident over a dozen year period.
 
 Incidents involving more than one fire injury are filtered out, and the dates are formatted for
 visualization and re-formatted into a string to concatenated into a Google Search, the results are
-written to a CSV file in an Excel-friendly hyperlink format.
+written to a CSV file (googleSearches.csv) in an Excel-friendly hyperlink format.
 
 Over the course of this journey with data, I had five requirements to meet with this project:
 (1) Read data in, which I performed by downloading openly available government data, using pandas
