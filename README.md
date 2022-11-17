@@ -13,8 +13,8 @@ Beginning with an unaltered CSV file downloaded from louisville.gov (assets/fire
 the data on fire incidents is imported into a Pandas dataframe, and a visualization displays the
 amount of fire injuries per incident over a dozen year period.
 
-Incidents involving more than one fire injury are filtered out, and the dates are formatted for
-visualization and re-formatted into a string to concatenated into a Google Search, the results are
+Incidents involving more than one fire injury are filtered out, the dates are formatted for
+visualization and re-formatted into a string to concatenate into a Google Search, and the results are
 written to a CSV file (googleSearches.csv) in an Excel-friendly hyperlink format.
 
 Over the course of this journey with data, I had five requirements to meet with this project:
